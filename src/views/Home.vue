@@ -1,18 +1,16 @@
 <template>
   <div class="home">
-    <Header></Header>
-    <ImagesStream></ImagesStream>
+    <PicturesStream></PicturesStream>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import PicturesStream from "@/components/PicturesStream.vue";
-import Header from "@/components/Header.vue";
+import PicturesStream from "@/components/pictures/PicturesStream.vue";
 
 @Component({
   components: {
-    Header, ImagesStream: PicturesStream
+    PicturesStream
   },
 })
 export default class Home extends Vue {

@@ -10,6 +10,7 @@
         :key="picture.id"
         :picture="picture"
         @deleted="downloadPictures"
+        @voted="downloadPictures"
     ></Picture>
   </div>
 </template>
@@ -17,9 +18,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { PictureDto } from "@/services/picturesService/PictureDto";
-import Picture from "@/components/Picture.vue";
+import Picture from "@/components/pictures/Picture.vue";
 import { PicturesService } from "@/services/picturesService/PicturesService";
-import AddPicture from "@/components/AddPicture.vue";
+import AddPicture from "@/components/pictures/AddPicture.vue";
 
 @Component({
   components: {Picture, AddPicture}
