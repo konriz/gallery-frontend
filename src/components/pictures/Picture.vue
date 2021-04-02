@@ -12,6 +12,7 @@
       <button @click="vote(1)">Upvote ({{ upvotes }})</button>
       <button @click="vote(-1)">Downvote ({{ downvotes }})</button>
     </div>
+    <CommentsComponent :picture="picture"></CommentsComponent>
   </div>
 </template>
 
@@ -21,8 +22,11 @@ import { PictureDto } from "@/services/picturesService/PictureDto";
 import { PicturesService } from "@/services/picturesService/PicturesService";
 import { VoteDto } from "@/services/votesService/VoteDto";
 import { VotesService } from "@/services/votesService/VotesService";
+import CommentsComponent from "@/components/pictures/comments/CommentsList.vue";
 
-@Component
+@Component({
+  components: {CommentsComponent}
+})
 export default class Picture extends Vue {
   @Prop() picture!: PictureDto;
 
