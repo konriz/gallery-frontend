@@ -1,8 +1,8 @@
 <template>
   <div class="comments-list-component">
     <div class="comments-input">
-      <label for="picture-name">Comment</label>
-      <input id="picture-name" type="text" v-model="commentDto.content"/>
+      <label for="comment-input">Comment</label>
+      <input id="comment-input" type="text" v-model="commentDto.content"/>
       <button @click="save">
         Save
       </button>
@@ -24,7 +24,7 @@ import SingleComment from "@/components/pictures/comments/SingleComment.vue";
 @Component({
   components: {SingleComment}
 })
-export default class CommentsComponent extends Vue {
+export default class CommentsList extends Vue {
   @Prop() picture!: PictureDto;
 
   private commentDto: CommentDto = {picture: this.picture, content: ""};
